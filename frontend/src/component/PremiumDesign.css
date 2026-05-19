@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #6366f1; /* Indigo */
+  --primary-hover: #4f46e5;
+  --secondary-color: #ec4899; /* Pink */
+  --background-gradient: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  --sidebar-bg: rgba(255, 255, 255, 0.7);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+  --danger-color: #ef4444;
+  --success-color: #10b981;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+body {
+  font-family: 'Outfit', sans-serif !important;
+  background: var(--background-gradient);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Glassmorphism Containers */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-glass);
+}
+
+/* Typography Overrides */
+h2#role-title, h2#role-form-title, h2.page-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  position: relative;
+  display: inline-block;
+}
+
+h2#role-title::after, h2#role-form-title::after, h2.page-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 4px;
+  width: 40px;
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+/* Buttons */
+.btn-primary, button#add-button, .btn-submit {
+  background-color: var(--primary-color) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 10px 20px !important;
+  font-weight: 500 !important;
+  font-family: 'Outfit', sans-serif !important;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover, button#add-button:hover, .btn-submit:hover {
+  background-color: var(--primary-hover) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-danger {
+  background-color: var(--danger-color) !important;
+  border: none !important;
+  border-radius: 8px !important;
+}
+
+/* Forms */
+.form-control {
+  border-radius: 8px !important;
+  border: 1px solid #d1d5db !important;
+  padding: 10px 15px !important;
+  transition: all 0.3s ease !important;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2) !important;
+}
+
+/* AG Grid Customization */
+#table-outer-div-scroll {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow-glass);
+  margin: 20px auto;
+  max-width: 95%;
+}
+
+.ag-theme-balham {
+  font-family: 'Outfit', sans-serif !important;
+  border-radius: 8px;
+  overflow: hidden;
+  border: none !important;
+  box-shadow: var(--shadow-sm);
+  height: 600px;
+}
+
+.ag-theme-balham .ag-header {
+  background-color: #f8fafc !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+}
+
+.ag-theme-balham .ag-header-cell-text {
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  color: var(--text-dark) !important;
+}
+
+.ag-theme-balham .ag-row {
+  border-bottom: 1px solid #f1f5f9 !important;
+  transition: background-color 0.2s ease;
+}
+
+.ag-theme-balham .ag-row:hover {
+  background-color: #f1f5f9 !important;
+}
+
+.ag-theme-balham .ag-cell {
+  font-size: 14px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+
+/* FontAwesome Icons in tables */
+.ag-cell svg {
+  cursor: pointer;
+  margin: 0 8px;
+  color: var(--primary-color);
+  transition: all 0.2s ease;
+  font-size: 16px;
+}
+
+.ag-cell svg.fa-trash {
+  color: var(--danger-color);
+}
+
+.ag-cell svg.fa-edit {
+  color: var(--success-color);
+}
+
+.ag-cell svg:hover {
+  transform: scale(1.2);
+}
+
+/* Leave Application custom tags */
+.status-pending {
+  background-color: #fef3c7;
+  color: #d97706;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-approved {
+  background-color: #d1fae5;
+  color: #059669;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-rejected {
+  background-color: #fee2e2;
+  color: #dc2626;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}

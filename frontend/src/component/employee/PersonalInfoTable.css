@@ -1,0 +1,126 @@
+/* Container for the profile card */
+.profile-container {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.profile-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Glass panel profile card */
+.profile-card {
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Header section of the profile card */
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.profile-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color, #4f46e5);
+  letter-spacing: 0.5px;
+}
+
+/* Edit button styling */
+.edit-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.edit-profile-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.3);
+}
+
+/* Grid layout for profile details */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* Individual profile data item */
+.profile-item {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.profile-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.profile-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.profile-item label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted, #6b7280);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.profile-item p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-main, #1f2937);
+}
+
+/* No data placeholder */
+.no-data-panel {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  border-radius: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
