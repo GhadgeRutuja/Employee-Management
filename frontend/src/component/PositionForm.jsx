@@ -11,7 +11,7 @@ class PositionForm extends Component {
   companyData = [];
   loadCompanyInfo = () => {
     axios
-      .get("http://localhost:4000/api/company", {
+      .get(process.env.REACT_APP_API_URL + "/api/company", {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }

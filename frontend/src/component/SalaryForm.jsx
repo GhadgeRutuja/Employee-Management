@@ -12,7 +12,7 @@ class SalaryForm extends Component {
  
   loadEmployeeInfo = () => {
     axios
-      .get("http://localhost:4000/api/employee", {
+      .get(process.env.REACT_APP_API_URL + "/api/employee", {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }

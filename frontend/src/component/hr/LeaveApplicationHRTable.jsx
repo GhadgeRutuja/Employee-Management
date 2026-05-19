@@ -110,7 +110,7 @@ class LeaveApplicationHRTable extends Component {
 
   loadLeaveApplicationHRData = () => {
     axios
-      .get("http://localhost:4000/api/leave-application-hr/", {
+      .get(process.env.REACT_APP_API_URL + "/api/leave-application-hr/", {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }
@@ -151,7 +151,7 @@ class LeaveApplicationHRTable extends Component {
     if (window.confirm("Are you sure to delete this record? ") == true) {
       axios
         .delete(
-          "http://localhost:4000/api/leave-application-hr/" + e1 + "/" + e2, {
+          process.env.REACT_APP_API_URL + "/api/leave-application-hr/" + e1 + "/" + e2, {
           headers: {
             authorization: localStorage.getItem("token") || ""
           }
@@ -194,14 +194,14 @@ class LeaveApplicationHRTable extends Component {
 
   onApprove = (id) => {
     let body = { Status: 2 };
-    axios.put(`http://localhost:4000/api/leave-application-hr/${id}`, body, {
+    axios.put(`${process.env.REACT_APP_API_URL}/api/leave-application-hr/${id}`, body, {
       headers: { authorization: localStorage.getItem("token") || "" }
     }).then(res => { this.loadLeaveApplicationHRData(); }).catch(err => console.log(err));
   };
 
   onReject = (id) => {
     let body = { Status: 3 };
-    axios.put(`http://localhost:4000/api/leave-application-hr/${id}`, body, {
+    axios.put(`${process.env.REACT_APP_API_URL}/api/leave-application-hr/${id}`, body, {
       headers: { authorization: localStorage.getItem("token") || "" }
     }).then(res => { this.loadLeaveApplicationHRData(); }).catch(err => console.log(err));
   };

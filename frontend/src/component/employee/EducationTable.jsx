@@ -27,7 +27,7 @@ class EducationTable extends Component {
 
   loadEducationData = () => {
     axios
-      .get("http://localhost:4000/api/education/" + this.props.data["_id"], {
+      .get(process.env.REACT_APP_API_URL + "/api/education/" + this.props.data["_id"], {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }
@@ -57,7 +57,7 @@ class EducationTable extends Component {
   onEducationDelete = (e1, e2) => {
     if (window.confirm("Are you sure to delete this record? ") == true) {
       axios
-        .delete("http://localhost:4000/api/education/" + e1 + "/" + e2, {
+        .delete(process.env.REACT_APP_API_URL + "/api/education/" + e1 + "/" + e2, {
           headers: {
             authorization: localStorage.getItem("token") || ""
           }

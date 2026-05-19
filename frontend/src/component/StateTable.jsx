@@ -73,7 +73,7 @@ class StateTable extends Component {
   // stateDataArray;
   loadStateData = () => {
     axios
-      .get("http://localhost:4000/api/state", {
+      .get(process.env.REACT_APP_API_URL + "/api/state", {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }
@@ -110,7 +110,7 @@ class StateTable extends Component {
     // let body= "ID=" + e;
     if (window.confirm("Are you sure to delete this record ? ") == true) {
       axios
-        .delete("http://localhost:4000/api/state/" + e, {
+        .delete(process.env.REACT_APP_API_URL + "/api/state/" + e, {
           headers: {
             authorization: localStorage.getItem("token") || ""
           }
@@ -127,16 +127,16 @@ class StateTable extends Component {
     }
 
     // axios
-    // .delete("http://localhost:4000/api/state", })
+    // .delete(process.env.REACT_APP_API_URL + "/api/state", })
     // .then(response => {
 
     // })
     // .catch(error => {
     //   console.log(error);
     // });
-    // axios.delete('http://localhost:4000/api/state')
+    // axios.delete(process.env.REACT_APP_API_URL + '/api/state')
     //      .then(res => console.log(res.data));
-    // fetch("http://localhost:4000/api/state", {
+    // fetch(process.env.REACT_APP_API_URL + "/api/state", {
     //   method: 'delete'
     // })
     // .then(response => response.json());

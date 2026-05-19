@@ -27,7 +27,7 @@ class PersonalInfoTable extends Component {
 
   loadPersonalInfoData = () => {
     axios
-      .get("http://localhost:4000/api/personal-info/" + this.props.data["_id"], {
+      .get(process.env.REACT_APP_API_URL + "/api/personal-info/" + this.props.data["_id"], {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }

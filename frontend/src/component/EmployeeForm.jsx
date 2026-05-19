@@ -13,7 +13,7 @@ class EmployeeForm extends Component {
 
   loadRoleInfo = () => {
     axios
-      .get("http://localhost:4000/api/role", {
+      .get(process.env.REACT_APP_API_URL + "/api/role", {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }
@@ -27,7 +27,7 @@ class EmployeeForm extends Component {
   };
   loadPositionInfo = () => {
     axios
-      .get("http://localhost:4000/api/position", {
+      .get(process.env.REACT_APP_API_URL + "/api/position", {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }
@@ -41,7 +41,7 @@ class EmployeeForm extends Component {
   };
   loadDepartmentInfo = () => {
     axios
-      .get("http://localhost:4000/api/department", {
+      .get(process.env.REACT_APP_API_URL + "/api/department", {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }

@@ -131,7 +131,7 @@ class Employee extends Component {
     
     console.log("Submitting employee:", body);
     axios
-      .post("http://localhost:4000/api/employee", body, {
+      .post(process.env.REACT_APP_API_URL + "/api/employee", body, {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }
@@ -192,7 +192,7 @@ class Employee extends Component {
     console.log("Updating employee:", body);
     axios
       .put(
-        "http://localhost:4000/api/employee/" + info["_id"],
+        process.env.REACT_APP_API_URL + "/api/employee/" + info["_id"],
         body, {
         headers: {
           authorization: localStorage.getItem("token") || ""
