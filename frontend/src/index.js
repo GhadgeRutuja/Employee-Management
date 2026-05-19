@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import "./component/PremiumDesign.css";
-console.log("Reload");
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+console.log("Reload");
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

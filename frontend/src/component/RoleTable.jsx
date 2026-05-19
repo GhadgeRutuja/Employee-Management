@@ -71,7 +71,7 @@ class RoleTable extends Component {
 
   loadRoleData = () => {
     axios
-      .get(process.env.REACT_APP_API_URL + "/api/role", {
+      .get((process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/role", {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }
@@ -105,7 +105,7 @@ class RoleTable extends Component {
     console.log(e);
     if (window.confirm("Are you sure to delete this record ? ") == true) {
       axios
-        .delete(process.env.REACT_APP_API_URL + "/api/role/" + e, {
+        .delete((process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/role/" + e, {
           headers: {
             authorization: localStorage.getItem("token") || ""
           }

@@ -51,7 +51,7 @@ class EmployeeFormEdit extends Component {
 
   loadRoleInfo = () => {
     axios
-      .get(process.env.REACT_APP_API_URL + "/api/role", {
+      .get((process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/role", {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }
@@ -65,7 +65,7 @@ class EmployeeFormEdit extends Component {
   };
   loadPositionInfo = () => {
     axios
-      .get(process.env.REACT_APP_API_URL + "/api/position", {
+      .get((process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/position", {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }
@@ -79,7 +79,7 @@ class EmployeeFormEdit extends Component {
   };
   loadDepartmentInfo = () => {
     axios
-      .get(process.env.REACT_APP_API_URL + "/api/department", {
+      .get((process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/department", {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }

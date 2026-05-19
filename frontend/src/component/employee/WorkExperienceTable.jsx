@@ -27,7 +27,7 @@ class WorkExperienceTable extends Component {
 
   loadWorkExperienceData = () => {
     axios
-      .get(process.env.REACT_APP_API_URL + "/api/work-experience/" + this.props.data["_id"], {
+      .get((process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/work-experience/" + this.props.data["_id"], {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }
@@ -57,7 +57,7 @@ class WorkExperienceTable extends Component {
   onWorkExperienceDelete = (e1, e2) => {
     if (window.confirm("Are you sure to delete this record? ") == true) {
       axios
-        .delete(process.env.REACT_APP_API_URL + "/api/work-experience/" + e1 + "/" + e2, {
+        .delete((process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/work-experience/" + e1 + "/" + e2, {
           headers: {
             authorization: localStorage.getItem("token") || ""
           }

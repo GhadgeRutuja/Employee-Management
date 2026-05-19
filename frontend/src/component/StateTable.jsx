@@ -73,7 +73,7 @@ class StateTable extends Component {
   // stateDataArray;
   loadStateData = () => {
     axios
-      .get(process.env.REACT_APP_API_URL + "/api/state", {
+      .get((process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/state", {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }
@@ -110,7 +110,7 @@ class StateTable extends Component {
     // let body= "ID=" + e;
     if (window.confirm("Are you sure to delete this record ? ") == true) {
       axios
-        .delete(process.env.REACT_APP_API_URL + "/api/state/" + e, {
+        .delete((process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/state/" + e, {
           headers: {
             authorization: localStorage.getItem("token") || ""
           }
@@ -127,16 +127,16 @@ class StateTable extends Component {
     }
 
     // axios
-    // .delete(process.env.REACT_APP_API_URL + "/api/state", })
+    // .delete((process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/state", })
     // .then(response => {
 
     // })
     // .catch(error => {
     //   console.log(error);
     // });
-    // axios.delete(process.env.REACT_APP_API_URL + '/api/state')
+    // axios.delete((process.env.REACT_APP_API_URL || "http://localhost:4000") + '/api/state')
     //      .then(res => console.log(res.data));
-    // fetch(process.env.REACT_APP_API_URL + "/api/state", {
+    // fetch((process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/state", {
     //   method: 'delete'
     // })
     // .then(response => response.json());

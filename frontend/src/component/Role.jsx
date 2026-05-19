@@ -73,7 +73,7 @@ class Role extends Component {
     //  let body= "CompanyID=" + event.target[0].value + "&Role=" + event.target[1].value;
     //  let body= "debru";
     axios
-      .post(process.env.REACT_APP_API_URL + "/api/role", body, {
+      .post((process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/role", body, {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }
@@ -122,7 +122,7 @@ class Role extends Component {
     };
     console.log("update", body);
     axios
-      .put(process.env.REACT_APP_API_URL + "/api/role/" + info["_id"], body, {
+      .put((process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/role/" + info["_id"], body, {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }

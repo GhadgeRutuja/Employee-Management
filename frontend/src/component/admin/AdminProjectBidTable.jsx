@@ -108,7 +108,7 @@ class AdminProjectBidTable extends Component {
 
   loadProjectBidData = () => {
     axios
-      .get(process.env.REACT_APP_API_URL + "/api/admin/project-bid", {
+      .get((process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/admin/project-bid", {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }
@@ -145,7 +145,7 @@ class AdminProjectBidTable extends Component {
     console.log(e);
     if (window.confirm("Are you sure to delete this record? ") == true) {
       axios
-        .delete(process.env.REACT_APP_API_URL + "/api/admin/project-bid/" + e, {
+        .delete((process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/admin/project-bid/" + e, {
           headers: {
             authorization: localStorage.getItem("token") || ""
           }

@@ -19,7 +19,7 @@ class CityForm extends Component {
   }
   loadCountryInfo = () => {
     axios
-      .get(process.env.REACT_APP_API_URL + "/api/country", {
+      .get((process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/country", {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }
@@ -33,7 +33,7 @@ class CityForm extends Component {
   };
   loadStateInfo = () => {
     axios
-      .get(process.env.REACT_APP_API_URL + "/api/state", {
+      .get((process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/state", {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }
